@@ -1,0 +1,540 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #f3a683;
+  --text-white: #fff;
+  --text-black: #000;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #000;
+}
+
+h1,
+h2,
+h3 {
+  margin: 10px 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+header {
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: var(--text-white);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+header .logo {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+header .highlight-text {
+  color: var(--primary-color);
+}
+
+header ul {
+  display: flex;
+}
+
+header ul li {
+  padding: 0px 10px;
+}
+
+header ul li a {
+  color: rgba(133, 132, 132, 0.883);
+  text-transform: uppercase;
+  font-weight: 300;
+  cursor: pointer;
+  transform: all 0.3 ease;
+}
+
+header ul li a:hover {
+  color: var(--primary-color);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 4px;
+  background-color: #333; 
+  border-radius: 2px; 
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover .bar {
+  background-color: #555;
+}
+
+/* buttons styles */
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 25px;
+  text-align: center;
+  transition: all 0.3 ease;
+  border: none;
+  outline: none;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: var(--text-white);
+  border: none;
+}
+
+/* text styles */
+
+.xxl {
+  font-size: 50px;
+  margin: 20px 0 40px 0;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.xl {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: normal;
+  margin: 20px auto 30px;
+}
+
+.md {
+  font-size: 30px;
+  margin: 20px 0px;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.leading {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 20px 0;
+  color: gray;
+}
+
+/* showcase */
+.showcase {
+  position: relative;
+  height: 600px;
+  background: url("/images/1.jpg") no-repeat center center/cover;
+  color: white;
+}
+
+.showcase::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.showcase .container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0px 20px;
+}
+
+.showcase .showcase-content {
+  width: 70%;
+  position: relative;
+  z-index: 2;
+}
+
+.showcase .showcase-text {
+  color: #ccc;
+}
+
+/* about */
+.about {
+  padding: 50px 0;
+}
+
+.about .container {
+  padding: 0px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.about img {
+  height: 450px;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.about img:hover {
+  transform: scale(1.01);
+}
+
+.about .about-content {
+  padding-top: 50px;
+}
+
+.about .sub-title {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* portfolio */
+.portfolio {
+  padding: 50px 0;
+}
+
+.portfolio .container {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.portfolio img {
+  height: 450px;
+  object-fit: cover;
+  transition: all 0.3 ease-in-out;
+  cursor: pointer;
+}
+
+.portfolio img:hover {
+  transform: scale(1.03);
+}
+
+/* info */
+.info {
+  padding: 50px 0;
+  height: 500px;
+  color: var(--text-white);
+  position: relative;
+  background: url("/images/2.jpg") no-repeat center center/cover;
+}
+
+.info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.info .container {
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  text-align: center;
+}
+
+.info .info-content {
+  position: relative;
+  z-index: 2;
+}
+
+.info .sub-title {
+  max-width: 700px;
+  margin: 20px auto;
+  color: #ccc;
+}
+
+.contact {
+  padding: 50px 0;
+  background-color: #ececec;
+}
+
+.contact .container {
+  padding: 0 20px;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+  background: var(--text-white);
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact label {
+  font-size: 16px;
+  font-family: sans-serif;
+  color: #555;
+}
+
+.contact .input-group {
+  margin: 20px 0;
+}
+
+.contact input,
+textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: gray;
+}
+
+.contact input::placeholder {
+  color: lightgray;
+}
+
+.contact textarea::placeholder {
+  color: lightgray;
+}
+
+.contact textarea {
+  height: 170px;
+  resize: none;
+}
+
+.contact input,
+textarea:focus {
+  outline: none;
+}
+
+.contact .contact-btn {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact .contact-btn:hover {
+  opacity: 0.9;
+}
+
+/* footer */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  padding: 50px 0 20px 0;
+}
+
+.footer .container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer ul li {
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.footer h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 670px) {
+  .hamburger {
+    display: flex;
+    z-index: 1;
+  }
+
+  header ul {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-color);
+  }
+
+  header ul.active {
+    display: flex;
+  }
+
+  header ul li {
+    margin: 20px 0;
+  }
+
+  header ul li a {
+    color: var(--text-white);
+    font-size: 20px;
+  }
+
+  header ul li a:hover {
+    color: var(--text-white);
+    font-weight: 500;
+  }
+
+  .xxl {
+    font-size: 40px;
+    margin: 20px 0 30px 0;
+  }
+
+  .xl {
+    font-size: 35px;
+    margin: 20px 0;
+  }
+
+  .md {
+    font-size: 27px;
+    margin: 15px 0;
+  }
+
+  .leading {
+    font-size: 18px;
+  }
+
+  .showcase .showcase-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .showcase .showcase-text {
+    width: 100%;
+    font-size: 18px;
+  }
+  .footer .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info {
+    height: 550px;
+  }
+
+  .info .sub-title {
+    width: 100%;
+  }
+
+  .about .container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .about .about-content {
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .portfolio .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact .container,
+  .showcase .container,
+  .about .container,
+  .portfolio .container,
+  .footer .container,
+  .contact .container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .xxl {
+    font-size: 35px;
+    margin: 20px 0;
+  }
+
+  .xl {
+    font-size: 30px;
+    margin: 15px 0;
+  }
+
+  .md {
+    font-size: 25px;
+    margin: 10px 0;
+  }
+
+  .leading {
+    font-size: 16px;
+  }
+  .footer .container {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio .container {
+    grid-template-columns: 1fr;
+  }
+}
